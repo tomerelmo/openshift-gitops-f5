@@ -11,6 +11,7 @@ spec:
     insecure: true
     pool-member-type: cluster
     static-routing-mode: true
+    custom-resource-mode: true
     log_level: DEBUG
   image:
     pullPolicy: Always
