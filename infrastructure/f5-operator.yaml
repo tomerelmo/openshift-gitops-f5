@@ -7,6 +7,6 @@ spec:
   channel: stable
   installPlanApproval: Automatic
   name: f5-bigip-ctlr-operator
-  source: redhat-operators
+  source: certified-operators
   sourceNamespace: openshift-marketplace
 
