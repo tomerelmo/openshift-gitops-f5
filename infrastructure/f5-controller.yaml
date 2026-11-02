@@ -4,8 +4,22 @@ metadata:
   name: my-f5-controller
   namespace: openshift-operators
 spec:
-  bigip_address: 192.168.1.245 
-  bigip_partition: "openshift" 
-  bigip_login_secret: "bigip-login" 
-  openshift_sdn: true 
+  args:
+    bigip_url: 10.1.30.201
+    bigip_partition: openshift
+    bigip_login_secret: bigip-login
+    insecure: true
+    pool-member-type: cluster
+    static-routing-mode: true
+    log_level: DEBUG
+  image:
+    pullPolicy: Always
+    repo: f5networks/cntr-ingress-svcs
+    user: registry.connect.redhat.com
+  namespace: kube-system
+  rbac:
+    create: true
+  serviceAccount:
+    create: true
+  version: latest
 
