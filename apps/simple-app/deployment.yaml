@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: f5-demo-app
+  namespace: default
+  labels:
+    app: f5-demo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: f5-demo-app
+  template:
+    metadata:
+      labels:
+        app: f5-demo-app
+    spec:
+      containers:
+      - name: f5-demo-app
+        image: f5devcentral/f5-hello-world:latest
+        ports:
+        - containerPort: 8080
+
