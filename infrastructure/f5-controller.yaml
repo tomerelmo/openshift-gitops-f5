@@ -4,12 +4,14 @@ metadata:
   name: my-f5-controller
   namespace: openshift-operators
 spec:
+  bigip_login_secret: f5-bigip-ctlr-login
   args:
     bigip_url: 10.1.30.201
     bigip_partition: openshift
     insecure: true
     pool-member-type: cluster
     static-routing-mode: true
+    orchestration-cni: ovn-k8s
     custom-resource-mode: true
     log_level: DEBUG
   image:
