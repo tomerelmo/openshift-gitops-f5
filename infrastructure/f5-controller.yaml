@@ -8,8 +8,8 @@ spec:
   args:
     bigip_url: 10.1.30.201
     gtm-bigip-url: 10.1.30.201
-    gtm-bigip-password: admin
-    gtm-bigip-username: ilovesleep
+    gtm-bigip-password: ilovesleep
+    gtm-bigip-username: admin
     bigip_partition: openshift
     insecure: true
     pool-member-type: cluster
