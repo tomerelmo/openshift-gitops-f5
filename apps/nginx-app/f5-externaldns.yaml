@@ -1,0 +1,23 @@
+apiVersion: cis.f5.com/v1
+kind: ExternalDNS
+metadata:
+  name: nginx-wideip
+  namespace: default
+  labels:
+    f5cr: "true"
+spec:
+  domainName: app.f5.train
+  dnsRecordType: A
+  loadBalanceMethod: round-robin
+  pools:
+  - name: app.f5.train
+    dnsRecordType: A
+    loadBalanceMethod: round-robin
+    dataServerName: /Common/BIGIP-OC-01 # <-- Point directly to the active GTM Server
+    monitor:
+      type: http
+      send: "GET / HTTP/1.1\r\nHost: app.f5.train\r\n" # <-- Corrected monitor string format
+      recv: ""
+      interval: 10
+      timeout: 30
+
