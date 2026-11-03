@@ -13,7 +13,7 @@ spec:
   - name: app.f5.train
     dnsRecordType: A
     loadBalanceMethod: round-robin
-    dataServerName: /Common/OC-Cluster
+    dataServerName: /Common/oc_pair
     monitor:
       type: http
       send: "GET /"
