@@ -16,7 +16,7 @@ spec:
     static-routing-mode: true
     orchestration-cni: ovn-k8s
     custom-resource-mode: true
-    log_level: DEBUG
+    log_level: ERROR
   image:
     pullPolicy: Always
     repo: f5networks/cntr-ingress-svcs
